@@ -83,7 +83,9 @@ public struct RichTextEditor: ViewRepresentable {
         return textView
     }
 
-    public func updateUIView(_ view: UIViewType, context: Context) {}
+    public func updateUIView(_ view: UIViewType, context: Context) {
+        textView.setRichText(text.wrappedValue)
+    }
     #endif
 
     #if os(macOS)
@@ -93,7 +95,9 @@ public struct RichTextEditor: ViewRepresentable {
         return scrollView
     }
 
-    public func updateNSView(_ view: NSViewType, context: Context) {}
+    public func updateNSView(_ view: NSViewType, context: Context) {
+        textView.setRichText(text.wrappedValue)
+    }
     #endif
 }
 
